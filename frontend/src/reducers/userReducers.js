@@ -19,7 +19,7 @@ import {
 export const userLoginReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
-      return { loading: true};
+      return { loading: true };
 
     case USER_LOGIN_SUCCESS:
       return { loading: false, userInfo: action.payload };
@@ -51,7 +51,7 @@ export const userRegisterReducer = (state = {}, action) => {
   }
 };
 
-export const userDetailsReducer = (state = {user:{}}, action) => {
+export const userDetailsReducer = (state = { user: {} }, action) => {
   switch (action.type) {
     case USER_DETAILS_REQUEST:
       return { ...state, loading: true };
@@ -63,7 +63,7 @@ export const userDetailsReducer = (state = {user:{}}, action) => {
       return { loading: false, error: action.payload };
 
     case USER_DETAILS_RESET:
-      return{user:{}}
+      return { user: {} };
 
     default:
       return state;

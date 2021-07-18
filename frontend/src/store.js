@@ -6,21 +6,30 @@ import {
   productDetailsReducer,
 } from "./reducers/productReducers";
 import { cartReducer } from "./reducers/cartReducers";
-import { userLoginReducer,userRegisterReducer,userDetailsReducer,userUpdateProfileReducer} from "./reducers/userReducers";
+import {
+  userLoginReducer,
+  userRegisterReducer,
+  userDetailsReducer,
+  userUpdateProfileReducer,
+} from "./reducers/userReducers";
 
+import { orderCreateReducer,orderDetailsReducer } from "./reducers/orderReducers";
 
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
-  cart:cartReducer,
-  userLogin:userLoginReducer,
-  userRegister:userRegisterReducer,
-  userDetails:userDetailsReducer,
-  userUpdateProfile:userUpdateProfileReducer,
+  cart: cartReducer,
+  userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails:orderDetailsReducer,
 });
 
-const cartItemsFromStorage=localStorage.getItem('cartItems') ?
-      JSON.parse(localStorage.getItem('cartItems')) : []
+const cartItemsFromStorage = localStorage.getItem("cartItems")
+  ? JSON.parse(localStorage.getItem("cartItems"))
+  : [];
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
